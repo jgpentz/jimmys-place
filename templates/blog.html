@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Echo + HTMX</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+</head>
+<body>
+    <div id="content" hx-boost="true">
+        <h1>this is the start of my blog</h1>
+        <a href="/" hx-swap="transition:true">Go home</a>
+        <br>
+        <a href="/blog/page1" hx-swap="transition:true">page 1</a>
+        <br>
+        <a href="/blog/page2" hx-swap="transition:true">page 2</a>
+        <br>
+        <a href="/blog/page3" hx-swap="transition:true">page 3</a>
+        <br>
+    </div>
+</body>
+</html>

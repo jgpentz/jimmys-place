@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Echo + HTMX</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+</head>
+<body>
+    <div id="page1" hx-boost="true">
+        <h1>This is page 1</h1>
+        <a href="/blog" hx-swap="transition:true">back to blog</a>
+        <br>
+        <a href="/blog/page1" hx-swap="transition:true">page 1</a>
+        <br>
+        <a href="/blog/page2" hx-swap="transition:true">page 2</a>
+        <br>
+        <a href="/blog/page3" hx-swap="transition:true">page 3</a>
+        <br>
+        <br>
+        <img src="/static/goho.jpg">
+    </div>
+</body>
+</html>

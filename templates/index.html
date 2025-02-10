@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Echo + HTMX</title>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main-content" hx-boost="true">
+        <h1>Hello, HTMX with Echo!</h1>
+        <a href="/blog" hx-swap="transition:true">go to blog</a>
+    </div>
+</body>
+</html>

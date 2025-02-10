@@ -1,0 +1,30 @@
+html, body {
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+}
+body {
+    cursor: url('/static/cursor_white.svg'), auto;
+    font-family: 'Fira Code';
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    cursor: url('/static/cursor_black.svg'), pointer;
+    font-size: 30px;
+}
+
+#page1 {
+    background-color: orange;
+}
+
+#page2 {
+    background-color: yellow;
+}
+
+#page3 {
+    background-color: red;
+}
