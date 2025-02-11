@@ -16,9 +16,22 @@
   </style>
 </head>
 <body>
-    <div id="main-content" hx-boost="true">
-        <h1>Hello, HTMX with Echo!</h1>
-        <a href="/blog" hx-swap="transition:true">go to blog</a>
+    <div class="main-wrapper" hx-boost="true">
+        <div class="navbar">
+            <a class="navbar-link" href="/" hw-swap="transition:true">Jimmy's Place</a>
+            <a class="navbar-link" href="/blog" hx-swap="transition:true">blog</a>
+        </div>
+        <p id="main-bio">Jimmy Pentz is a <u class="orange-underline">network engineer</u>
+            with a focus on random things. 
+            Currently working full time in a 
+            phased array antenna group, while 
+            pursuing a master’s in network 
+            engineering at the University of 
+            Colorado Boulder.
+        </p>
+        <img id="clouds" src="/static/clouds.png">
+        <a id="notes-bubble" class="bubble" href="/blog" hx-swap="transition:true">NOTES</a>
+        <a id="resume-bubble" class="bubble" href="/blog" hx-swap="transition:true">RESUME</a>
     </div>
 </body>
 </html>
