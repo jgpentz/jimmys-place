@@ -35,5 +35,5 @@ func main() {
 	e.Static("/static", "static")
 
 	// Start the server on port 8080
-	e.Logger.Fatal(e.Start(":2021"))
+	e.Logger.Fatal(e.Start(":2020"))
 }
