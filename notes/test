@@ -1,0 +1,8 @@
+#!/bin/bash
+hello=1
+echo yo ${hello}
+echo hello
+echo $hello
+echo "yoyoyo $hello"
+echo "yoyoyo hello"
+echo "yoyoyo ${hello}"

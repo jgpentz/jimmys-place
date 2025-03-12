@@ -1,10 +1,18 @@
 html, body {
-    min-height: 100dvh;
     margin: 0;
     padding: 0;
 }
+
+@font-face {
+    font-family: "standard";
+    src: url("/static/fonts/standard-book.otf") format("opentype");
+}
+
 body {
-    font-family: 'Fira Code';
+    margin: 35px;
+    font-family: 'standard', 'Fira Code';
+    font-size: clamp(3.2rem, 4vw, 5rem);
+    font-weight: 400;
 }
 
 h1 {
@@ -12,9 +20,11 @@ h1 {
 }
 
 a {
-    font-size: 30px;
     text-decoration: none;
     color: black;
+}
+a:hover {
+    color: grey;
 }
 
 .main-wrapper {
@@ -26,12 +36,10 @@ a {
 
 .navbar {
     margin-top: 20px;
-    margin-bottom: 65px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 1700px;
-    max-width: 1700px;
+    width: 100%;
 }
 
 .orange-underline{
@@ -41,35 +49,35 @@ a {
 }
 
 .navbar-link {
-    font-size: 60px;
 
 }
 
 #main-bio {
-    max-width: 1200px;
-    font-size: 60px;
-    line-height: 1.8;
-    z-index: 2;
+    letter-spacing: -0.045em;
+    font-style: normal;
 }
 
 #clouds {
     margin-top: 100px;
     position: absolute;
-    border-radius: 275px;
     width: 625px;
+}
+
+#hammer {
     z-index: 1;
+    position: absolute;
+    top: 50px;
+    left: 30%;
 }
 
 .bubble {
-    position: absolute;
-    font-size: 60px;
+    font-size: 55px;
     padding: 5px 20px 5px 20px;
     border: 10px;
     border-color: black;
     border-style: solid;
     border-radius: 100px;
     background-color: white;
-    z-index: 3;
 }
 
 .bubble:hover {
@@ -77,13 +85,9 @@ a {
 }
 
 #notes-bubble {
-    left: 1200px;
-    top: 100px;
 }
 
 #resume-bubble {
-    left: 720px;
-    top: 390px;
 }
 
 #page1 {
