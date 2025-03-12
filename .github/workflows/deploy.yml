@@ -46,7 +46,13 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
         ssh-keyscan -H 5.78.103.231 >> ~/.ssh/known_hosts
         rsync -avz --delete extracted_files/ jimmy@5.78.103.231:/var/www/jimmys-place/
+
+    - name: Restart Go server
+      env: 
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+      run: |
+        ssh -i ~/.ssh/id_ed25519 jimmy@5.78.103.231 "sudo systemctl restart jimmysplace"
