@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+    - name: Checkout code
       uses: actions/checkout@v3
 
-      - name: Copy files to VPS
+    - name: Copy files to VPS
       env:
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-        chmod 600 ~/.ssh/id_ed25519
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H 5.78.103.231 >> ~/.ssh/known_hosts
         rsync -avz --delete ./ jimmy@5.78.103.231:/var/www/jimmys-place/
