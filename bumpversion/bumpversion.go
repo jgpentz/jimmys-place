@@ -64,17 +64,24 @@ func main() {
 	// Format the version string
 	newVersion := fmt.Sprintf("v%d.%d.%d", version.Major, version.Minor, version.Patch)
 
-	// Create the Git tag
-	err = createGitTag(newVersion)
-	if err != nil {
-		fmt.Printf("Error creating Git tag: %s\n", err)
-		os.Exit(1)
-	}
-
 	// Save the updated version to the file
 	err = saveVersion(versionFilePath, version)
 	if err != nil {
 		fmt.Println("Error saving version:", err)
+		os.Exit(1)
+	}
+
+	// Add and commit version.json before creating the Git tag
+	err = addAndCommitVersion(versionFilePath)
+	if err != nil {
+		fmt.Println("Error committing version changes:", err)
+		os.Exit(1)
+	}
+
+	// Create the Git tag
+	err = createGitTag(newVersion)
+	if err != nil {
+		fmt.Printf("Error creating Git tag: %s\n", err)
 		os.Exit(1)
 	}
 
@@ -122,6 +129,25 @@ func saveVersion(versionFilePath string, version Version) error {
 	err = encoder.Encode(version)
 	if err != nil {
 		return fmt.Errorf("failed to encode version data: %w", err)
+	}
+
+	return nil
+}
+
+// Add and commit changes
+func addAndCommitVersion(versionFilePath string) error {
+	// Run git add command to stage the version file
+	cmd := exec.Command("git", "add", versionFilePath)
+	err := cmd.Run()
+	if err != nil {
+		return fmt.Errorf("failed to stage version file: %w", err)
+	}
+
+	// Run git commit command to commit the changes
+	cmd = exec.Command("git", "commit", "-m", "Bump version")
+	err = cmd.Run()
+	if err != nil {
+		return fmt.Errorf("failed to commit changes: %w", err)
 	}
 
 	return nil
