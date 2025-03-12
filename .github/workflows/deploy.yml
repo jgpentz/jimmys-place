@@ -35,6 +35,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Download deployment package
+      uses: actions/download-artifact@v4
+      with:
+        name: deployment-package
+
+    - name: Extract deployment package
+      run: unzip deployment-package.zip -d extracted_files
+
     - name: Copy files to VPS
       env:
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
@@ -43,4 +51,4 @@ jobs:
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H 5.78.103.231 >> ~/.ssh/known_hosts
-        rsync -avz --delete ./ jimmy@5.78.103.231:/var/www/jimmys-place/
+        rsync -avz --delete extracted_files/ jimmy@5.78.103.231:/var/www/jimmys-place/
