@@ -72,7 +72,7 @@ func main() {
 	}
 
 	// Add and commit version.json before creating the Git tag
-	err = addAndCommitVersion(versionFilePath)
+	err = addAndCommitVersion(versionFilePath, newVersion)
 	if err != nil {
 		fmt.Println("Error committing version changes:", err)
 		os.Exit(1)
@@ -135,7 +135,7 @@ func saveVersion(versionFilePath string, version Version) error {
 }
 
 // Add and commit changes
-func addAndCommitVersion(versionFilePath string) error {
+func addAndCommitVersion(versionFilePath string, version string) error {
 	// Run git add command to stage the version file
 	cmd := exec.Command("git", "add", versionFilePath)
 	err := cmd.Run()
@@ -144,7 +144,8 @@ func addAndCommitVersion(versionFilePath string) error {
 	}
 
 	// Run git commit command to commit the changes
-	cmd = exec.Command("git", "commit", "-m", "Bump version")
+	commitMessage := fmt.Sprintf("Bump version to %s", version)
+	cmd = exec.Command("git", "commit", "-m", commitMessage)
 	err = cmd.Run()
 	if err != nil {
 		return fmt.Errorf("failed to commit changes: %w", err)
