@@ -6,12 +6,32 @@ on:
       - main
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Setup Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.24.x'
+    - name: Install dependencies
+      run: go get .
+    - name: Build
+      run: go build -v ./server.go
+    - name: Upload exe
+      uses: actions/upload-artifact@v4
+      with:
+        name: server
+        path: server
+    
   deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Copy files to VPS
       env:
