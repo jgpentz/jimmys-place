@@ -44,15 +44,19 @@ jobs:
     - name: Copy files to VPS
       env:
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+        WEB_USER: ${{ secrets.WEB_USER }}
       run: |
         mkdir -p ~/.ssh
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
-        ssh-keyscan -H 5.78.103.231 >> ~/.ssh/known_hosts
-        rsync -avz --delete extracted_files/ jimmy@5.78.103.231:/var/www/jimmys-place/
+        ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+        rsync -avz --delete extracted_files/ $WEB_USER@$SERVER_IP:/var/www/jimmys-place/
 
     - name: Restart Go server
       env: 
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+        WEB_USER: ${{ secrets.WEB_USER }}
       run: |
-        ssh -i ~/.ssh/id_ed25519 jimmy@5.78.103.231 "sudo systemctl restart jimmysplace"
+        ssh -i ~/.ssh/id_ed25519 $WEB_USER@$SERVER_IP "sudo systemctl restart jimmysplace"
