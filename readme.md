@@ -1,4 +1,4 @@
-#  Jimmys Place (🇺🇸/🇯🇵) 🪐🧗📚
+#  Jimmys Place 🪐🧗📚
 
 ## Bumping version
 
