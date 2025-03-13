@@ -1,0 +1,37 @@
+{{ define "header" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <style>
+        body, html {
+            cursor: url('/static/cursor_white.svg'), auto;
+        }
+        a {
+            cursor: url('/static/cursor_black.svg'), pointer;
+        }
+  </style>
+</head>
+<body>
+    <div class="main-wrapper" hx-boost="true">
+        <header>
+            <nav class="navbar">
+                <a class="navbar-link" href="/" hw-swap="transition:true">jimmys.place</a>
+                <a class="navbar-link" href="/blog" hx-swap="transition:true">blog</a>
+            </nav>
+        </header>
+{{ end }}
+
+{{ define "footer" }}
+        <footer>
+            <p>&copy; 2025 jimmys.place</p>
+        </footer>
+    </div>
+</body>
+</html>
+{{ end }}

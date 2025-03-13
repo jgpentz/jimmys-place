@@ -1,39 +1,46 @@
 package main
 
 import (
+	"fmt"
+	"html/template"
+	"io"
+	"net/http"
+	"places/handlers"
 	"github.com/labstack/echo/v4"
 )
+
+// TemplateRenderer helps Echo render templates with data
+type TemplateRenderer struct {
+	templates *template.Template
+}
+
+// Render implements echo.Renderer
+func (t *TemplateRenderer) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
+	return t.templates.ExecuteTemplate(w, name, data)
+}
 
 func main() {
 	e := echo.New()
 
-	// Route for the homepage
+	// Set up the custom renderer for Echo
+	e.Renderer = &TemplateRenderer{
+		templates: template.Must(template.ParseGlob("templates/*.html")),
+	}
+    
+	// Homepage Route
 	e.GET("/", func(c echo.Context) error {
-		return c.File("templates/index.html")
+		data := map[string]interface{}{
+			"Title": "jimmys.place",
+		}
+		return c.Render(http.StatusOK, "home", data)
 	})
 
-	// Route for HTMX dynamic content
-	e.GET("/blog", func(c echo.Context) error {
-		return c.File("templates/blog.html")
-	})
+    handlers.RegisterBlogRoutes(e)
 
-	// Route for HTMX dynamic content
-	e.GET("/blog/page1", func(c echo.Context) error {
-		return c.File("templates/page1.html")
-	})
-
-	// Route for HTMX dynamic content
-	e.GET("/blog/page2", func(c echo.Context) error {
-		return c.File("templates/page2.html")
-	})
-
-	// Route for HTMX dynamic content
-	e.GET("/blog/page3", func(c echo.Context) error {
-		return c.File("templates/page3.html")
-	})
-
+	// Static files (CSS, images, etc.)
 	e.Static("/static", "static")
 
-	// Start the server on port 8080
+	// Start the server
 	e.Logger.Fatal(e.Start(":2020"))
 }
+

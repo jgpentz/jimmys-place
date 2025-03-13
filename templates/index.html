@@ -1,40 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Echo + HTMX</title>
-    <link rel="stylesheet" href="/static/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
-    <style>
-        body, html {
-            cursor: url('/static/cursor_white.svg'), auto;
-        }
-        a {
-            cursor: url('/static/cursor_black.svg'), pointer;
-        }
-  </style>
-</head>
-<body>
-    <div class="main-wrapper" hx-boost="true">
-        <div class="navbar">
-            <a class="navbar-link" href="/" hw-swap="transition:true">jimmys.place</a>
-            <a class="navbar-link" href="/blog" hx-swap="transition:true">blog</a>
-        </div>
-        <p id="main-bio">Hi, there! Jimmy is a <u class="orange-underline">network engineer</u>
-            with a focus on random things. 
-            Currently pursuing a master's in
-            network engineering at the University
-            of Colorado Boulder, while working
-            full time in a phased array antenna
-            group.
-            Test from git!!!!
-        </p>
-        <!-- <img id="clouds" src="/static/clouds.png"> -->
-        <!-- <div class="noise"></div> -->
-        <img id="hammer" src="/static/hammer-trasp.gif">
-        <a id="notes-bubble" class="bubble" href="/blog" hx-swap="transition:true">NOTES</a>
-        <a id="resume-bubble" class="bubble" href="/blog" hx-swap="transition:true">RESUME</a>
-    </div>
-</body>
-</html>
+{{ define "home" }}
+    {{ template "header" . }}
+
+    <p id="main-bio">Hi, there! Jimmy is a <u class="orange-underline">network engineer</u>
+        with a focus on random things. 
+        Currently pursuing a master's in
+        network engineering at the University
+        of Colorado Boulder, while working
+        full time in a phased array antenna
+        group.
+    </p>
+    <!-- <img id="clouds" src="/static/clouds.png"> -->
+    <!-- <div class="noise"></div> -->
+    <img id="hammer" src="/static/hammer-trasp.gif">
+    <a id="notes-bubble" class="bubble" href="/blog" hx-swap="transition:true">NOTES</a>
+    <a id="resume-bubble" class="bubble" href="/blog" hx-swap="transition:true">RESUME</a>
+
+    {{ template "footer" . }}
+{{ end }}

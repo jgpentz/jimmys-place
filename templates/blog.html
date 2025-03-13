@@ -1,35 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Echo + HTMX</title>
-    <link rel="stylesheet" href="/static/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
-    <style>
-        body, html {
-            cursor: url('/static/cursor_white.svg'), auto;
-        }
-        a {
-            cursor: url('/static/cursor_black.svg'), pointer;
-        }
-  </style>
-</head>
-<body >
-    <div class="main-wrapper" hx-boost="true">
-        <div class="navbar">
-            <a class="navbar-link" href="/" hx-swap="transition:true">Jimmy's Place</a>
-            <a class="navbar-link" href="/blog" hx-swap="transition:true">blog</a>
-        </div>
-        <h1>this is the start of my blog</h1>
-        <a href="/" hx-swap="transition:true">Go home</a>
-        <br>
-        <a href="/blog/page1" hx-swap="transition:true">page 1</a>
-        <br>
-        <a href="/blog/page2" hx-swap="transition:true">page 2</a>
-        <br>
-        <a href="/blog/page3" hx-swap="transition:true">page 3</a>
-        <br>
-    </div>
-</body>
-</html>
+{{ define "blog" }}
+    {{ template "header" . }}
+
+    <h1>Blog</h1>
+    <ul>
+        <li><a href="/blog/post1">Post 1: Introduction</a></li>
+        <li><a href="/blog/post2">Post 2: Advanced Topics</a></li>
+    </ul>
+
+    {{ template "footer" . }}
+{{ end }}
+

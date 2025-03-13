@@ -34,6 +34,10 @@ a:hover {
     justify-content: center;
 }
 
+header {
+    width: 100%
+
+}
 .navbar {
     margin-top: 20px;
     display: flex;
