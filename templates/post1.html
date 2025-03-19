@@ -1,9 +1,9 @@
 {{ define "post1" }}
     {{ template "header" . }}
 
-    <h1>Post 1: Introduction</h1>
-    <p>Welcome to the first blog post! Here we dive into the basics of modularization.</p>
-    <a href="/blog">← Back to Blog</a>
+        <h1>Post 1: Introduction</h1>
+        <p>Welcome to the first blog post! Here we dive into the basics of modularization.</p>
+        <a href="/blog" hx-swap="transition:true">← Back to Blog</a>
 
     {{ template "footer" . }}
 {{ end }}

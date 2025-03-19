@@ -1,11 +1,11 @@
 {{ define "blog" }}
     {{ template "header" . }}
 
-    <h1>Blog</h1>
-    <ul>
-        <li><a href="/blog/post1">Post 1: Introduction</a></li>
-        <li><a href="/blog/post2">Post 2: Advanced Topics</a></li>
-    </ul>
+        <h1>Blog</h1>
+        <ul>
+            <li><a href="/blog/post1" hx-swap="transition:true">Post 1: Introduction</a></li>
+            <li><a href="/blog/post2" hx-swap="transition:true">Post 2: Advanced Topics</a></li>
+        </ul>
 
     {{ template "footer" . }}
 {{ end }}

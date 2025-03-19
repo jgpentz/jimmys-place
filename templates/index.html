@@ -1,19 +1,18 @@
 {{ define "home" }}
     {{ template "header" . }}
 
-    <p id="main-bio">Hi, there! Jimmy is a <u class="orange-underline">network engineer</u>
-        with a focus on random things. 
-        Currently pursuing a master's in
-        network engineering at the University
-        of Colorado Boulder, while working
-        full time in a phased array antenna
-        group.
-    </p>
-    <!-- <img id="clouds" src="/static/clouds.png"> -->
-    <!-- <div class="noise"></div> -->
-    <img id="hammer" src="/static/hammer-trasp.gif">
-    <a id="notes-bubble" class="bubble" href="/blog" hx-swap="transition:true">NOTES</a>
-    <a id="resume-bubble" class="bubble" href="/blog" hx-swap="transition:true">RESUME</a>
+        <p id="main-bio">Hi, there! Jimmy is a <u class="orange-underline">network engineer</u>
+            with a focus on random things. 
+            Currently pursuing a master's in
+            network engineering at the University
+            of Colorado Boulder, while working
+            full time in a phased array antenna
+            group.
+        </p>
+        <!-- <img id="clouds" src="/static/clouds.png"> -->
+        <!-- <div class="noise"></div> -->
+        <a id="notes-bubble" class="bubble" href="/blog" hx-swap="transition:true">NOTES</a>
+        <a id="resume-bubble" class="bubble" href="/blog" hx-swap="transition:true">RESUME</a>
 
     {{ template "footer" . }}
 {{ end }}
