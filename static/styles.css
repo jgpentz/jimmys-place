@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-    margin: 35px;
+    padding: clamp(1.2rem, 2vw, 2rem);
     font-family: 'standard', 'Fira Code';
     font-size: clamp(3.2rem, 4vw, 5rem);
     font-weight: 400;
@@ -30,8 +30,8 @@ a:hover {
 .main-wrapper {
     display: flex; 
     flex-direction: column; 
-    align-items: center; 
-    justify-content: center;
+    align-items: left; 
+    justify-content: space-between;
 }
 
 header {
@@ -39,7 +39,7 @@ header {
 
 }
 .navbar {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -52,13 +52,19 @@ header {
     text-decoration-color: orange;
 }
 
-.navbar-link {
-
-}
-
 #main-bio {
     letter-spacing: -0.045em;
     font-style: normal;
+    justify-content: left;
+}
+
+#main-links{
+    margin-top: clamp(.7rem, 2vw, 1rem);
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: clamp(.7rem, 2vw, 1rem);
+    
 }
 
 #clouds {
@@ -75,9 +81,9 @@ header {
 }
 
 .bubble {
-    font-size: 55px;
-    padding: 5px 20px 5px 20px;
-    border: 10px;
+    letter-spacing: -0.045em;
+    padding: 7px 20px 7px 20px;
+    border: 4px;
     border-color: black;
     border-style: solid;
     border-radius: 100px;
@@ -88,20 +94,27 @@ header {
     color: white;
 }
 
-#notes-bubble {
+.main-page-text {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
 }
 
-#resume-bubble {
+.scrolling-container {
+    padding: 0;
+    width: fit-content;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-#page1 {
-    background-color: orange;
+.scrolling-text {
+    display: inline-block;
+    animation: scroll-rtl 10s linear infinite;
 }
 
-#page2 {
-    background-color: yellow;
-}
-
-#page3 {
-    background-color: red;
+@keyframes scroll-rtl {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }

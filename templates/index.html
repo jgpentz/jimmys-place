@@ -1,7 +1,7 @@
 {{ define "home" }}
     {{ template "header" . }}
 
-        <p id="main-bio">Hi, there! Jimmy is a <u class="orange-underline">network engineer</u>
+        <p id="main-bio" class="main-page-text">Hi, there! Jimmy is a <u class="orange-underline">network engineer</u>
             with a focus on random things. 
             Currently pursuing a master's in
             network engineering at the University
@@ -11,8 +11,15 @@
         </p>
         <!-- <img id="clouds" src="/static/clouds.png"> -->
         <!-- <div class="noise"></div> -->
-        <a id="notes-bubble" class="bubble" href="/blog" hx-swap="transition:true">NOTES</a>
-        <a id="resume-bubble" class="bubble" href="/blog" hx-swap="transition:true">RESUME</a>
+        <div id="main-email" class="bubble scrolling-container">
+            <a id="notes-bubble" class="main-page-text scrolling-text" href="/blog" hx-swap="transition:true">
+                jpentz1@gmail.com
+            </a>
+        </div>
+        <div id="main-links">
+            <a id="notes-bubble" class="bubble main-page-text" href="/blog" hx-swap="transition:true">Notes</a>
+            <a id="resume-bubble" class="bubble main-page-text" href="/blog" hx-swap="transition:true">Resume</a>
+        </div>
 
     {{ template "footer" . }}
 {{ end }}
