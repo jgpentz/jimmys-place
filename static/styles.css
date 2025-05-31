@@ -107,6 +107,7 @@ header {
 
 .scrolling-text {
     display: inline-block;
+    padding: 7px 20px 7px 20px;
     animation: scroll-rtl 10s linear infinite;
 }
 
