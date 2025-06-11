@@ -61,6 +61,7 @@ header {
 #main-links{
     margin-top: clamp(.7rem, 2vw, 1rem);
     display: flex;
+    flex-wrap: wrap;
     justify-content: left;
     flex-direction: row;
     gap: clamp(.7rem, 2vw, 1rem);
@@ -82,7 +83,7 @@ header {
 
 .bubble {
     letter-spacing: -0.045em;
-    padding: 7px 20px 7px 20px;
+    padding: 10px 20px 7px 20px;
     border: 4px;
     border-color: black;
     border-style: solid;
@@ -95,7 +96,7 @@ header {
 }
 
 .main-page-text {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-size: clamp(2.2rem, 5vw, 5rem);
 }
 
 #email-bubble:hover {
