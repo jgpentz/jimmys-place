@@ -11,7 +11,7 @@ html, body {
 body {
     padding: clamp(1.5rem, 2vw, 2rem) clamp(.7rem, 2vw, 2rem);
     font-family: 'standard', 'Fira Code';
-    font-size: clamp(3.2rem, 4vw, 5rem);
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -51,6 +51,9 @@ header {
     -webkit-text-decoration-color: orange; /* safari still uses vendor prefix */
     text-decoration-color: orange;
 }
+.main-page-text {
+    font-size: clamp(35px, 3.5vw, 75px);
+}
 
 #main-bio {
     letter-spacing: -0.045em;
@@ -68,19 +71,6 @@ header {
     
 }
 
-#clouds {
-    margin-top: 100px;
-    position: absolute;
-    width: 625px;
-}
-
-#hammer {
-    z-index: 1;
-    position: absolute;
-    top: 50px;
-    left: 30%;
-}
-
 .bubble {
     letter-spacing: -0.045em;
     padding: 10px 20px 7px 20px;
@@ -93,10 +83,6 @@ header {
 
 .bubble:hover {
     color: white;
-}
-
-.main-page-text {
-    font-size: clamp(2.2rem, 5vw, 5rem);
 }
 
 #email-bubble:hover {
