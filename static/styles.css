@@ -1,3 +1,4 @@
+/* --- Shared --- */
 html, body {
     margin: 0;
     padding: 0;
@@ -13,6 +14,7 @@ body {
     font-family: 'standard', 'Fira Code';
     font-size: 16px;
     font-weight: 400;
+    background-color: #FFFFFC;
 }
 
 h1 {
@@ -27,11 +29,10 @@ a:hover {
     color: grey;
 }
 
-.main-wrapper {
-    display: flex; 
-    flex-direction: column; 
-    align-items: left; 
-    justify-content: space-between;
+hr {
+    border: none;
+    height: 2px;
+    background-color: #000000;
 }
 
 header {
@@ -46,6 +47,16 @@ header {
     width: 100%;
 }
 
+
+/* --- Landing Page --- */
+.main-wrapper {
+    display: flex; 
+    flex-direction: column; 
+    align-items: left; 
+    justify-content: space-between;
+}
+
+
 .orange-underline{
     text-decoration: underline;
     -webkit-text-decoration-color: orange; /* safari still uses vendor prefix */
@@ -56,6 +67,7 @@ header {
 }
 
 #main-bio {
+    margin: clamp(35px, 3.5vw, 75px) 0;
     letter-spacing: -0.045em;
     font-style: normal;
     justify-content: left;
@@ -78,15 +90,15 @@ header {
     border-color: black;
     border-style: solid;
     border-radius: 100px;
-    background-color: white;
+    background-color: #FFFFFC;
 }
 
 .bubble:hover {
-    color: white;
+    color: #FFFFFC;
 }
 
 #email-bubble:hover {
-    color: white;
+    color: #FFFFFC;
 }
 
 .scrolling-container {
@@ -108,5 +120,64 @@ header {
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+
+/* --- Blog Post List --- */
+#blog-list-containter {
+    margin-top: clamp(35px, 3.5vw, 75px);
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    justify-content: center;
+
+}
+#blog-desc {
+    font-size: clamp(35px, 3.5vw, 75px);
+    /* text-align: center; */
+    /* width: 70%; */
+    font-weight: 400;
+}
+
+#blog-post-list {
+    margin-top: clamp(50px, 5vw, 80px);
+    list-style-type: none;
+    padding: 0;
+}
+
+.blog-post-link {
+    font-size: clamp(20px, 1.7vw, 50px);
+    display: flex;
+}
+
+.blog-post-link {
+    width: 100%;
+    margin: 0;
+}
+
+.blog-post-link .blog-link-meta {
+    flex: 0 0 20%; /* Each p takes equal width */
+    /* text-align: right; */
+    margin:0;
+    /* text-wrap: nowrap; */
+}
+
+.blog-post-link .blog-link-title {
+    flex: 0 0 60%;
+    margin:0;
+}
+
+/* Hide metadata on smaller screens */
+@media (max-width: 750px) {
+    hr {
+        height: 1px;
+    }
+
+    .blog-link-meta {
+        display: none;
+    }
+
+    .blog-post-link .blog-link-title {
+        flex: 1 1 100%;
     }
 }
