@@ -63,11 +63,11 @@ header {
     text-decoration-color: orange;
 }
 .main-page-text {
-    font-size: clamp(35px, 3.5vw, 75px);
+    font-size: clamp(35px, 3.5vw, 60px);
 }
 
 #main-bio {
-    margin: clamp(35px, 3.5vw, 75px) 0;
+    margin: clamp(35px, 3.5vw, 60px) 0;
     letter-spacing: -0.045em;
     font-style: normal;
     justify-content: left;
@@ -125,7 +125,7 @@ header {
 
 /* --- Blog Post List --- */
 #blog-list-containter {
-    margin-top: clamp(35px, 3.5vw, 75px);
+    margin-top: clamp(35px, 3.5vw, 60px);
     display: flex;
     /* align-items: center; */
     flex-direction: column;
@@ -133,14 +133,15 @@ header {
 
 }
 #blog-desc {
-    font-size: clamp(35px, 3.5vw, 75px);
+    font-size: clamp(35px, 3.5vw, 60px);
     /* text-align: center; */
     /* width: 70%; */
     font-weight: 400;
 }
 
 #blog-post-list {
-    margin-top: clamp(30px, 5vw, 80px);
+    /* margin-top: clamp(30px, 5vw, 50px); */
+    margin-top: 20px;
     list-style-type: none;
     padding: 0;
 }
