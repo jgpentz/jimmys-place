@@ -140,7 +140,7 @@ header {
 }
 
 #blog-post-list {
-    margin-top: clamp(50px, 5vw, 80px);
+    margin-top: clamp(40px, 5vw, 80px);
     list-style-type: none;
     padding: 0;
 }
