@@ -1,39 +1,33 @@
 {{ define "blog" }}
     {{ template "header" . }}
 
-        <div id="blog-list-containter">
-            <h1 id="blog-desc">Blog</h1>
-            <ul id="blog-post-list">
-                <li>
-                    <a href="/blog/post2" hx-swap="transition:true">
-                        <div class="blog-post-link">
-                            <p class="blog-link-title">Advanced Topics II</p>
-                            <p class="blog-link-meta">MN-003</p>
-                            <p class="blog-link-meta">22 JUN 2025</p>
-                        </div>
-                    </a>
-                </li>
-                <hr>
-                <li>
-                    <a href="/blog/post2" hx-swap="transition:true">
-                        <div class="blog-post-link">
-                            <p class="blog-link-title">Advanced Topics I: Here is a long title for a blog post</p>
-                            <p class="blog-link-meta">MN-002</p>
-                            <p class="blog-link-meta">20 JUN 2025</p>
-                        </div>
-                    </a>
-                </li>
-                <hr>
-                <li>
-                    <a href="/blog/post1" hx-swap="transition:true">
-                        <div class="blog-post-link">
-                            <p class="blog-link-title">Self Introduction</p>
-                            <p class="blog-link-meta">MN-001</p>
-                            <p class="blog-link-meta">20 JUN 2025</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+        <div id="blog-list-container">
+            <h1>blog.</h1>
+            <table id="blog-post-table">
+                <tbody>
+                    <tr>
+                        <td><a href="/blog/post2" hx-swap="transition:true">T2</a></td>
+                        <td><a href="/blog/post2" hx-swap="transition:true">Advanced Topics II</a></td>
+                        <td><a href="/blog/post2" hx-swap="transition:true">22 JUN 2025</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/blog/post2" hx-swap="transition:true">T1</a></td>
+                        <td><a href="/blog/post2" hx-swap="transition:true">EIGRP vs BGP</a></td>
+                        <td><a href="/blog/post2" hx-swap="transition:true">21 JUN 2025</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/blog/post1" hx-swap="transition:true">P1</a></td>
+                        <td><a href="/blog/post1" hx-swap="transition:true">Self Introduction</a></td>
+                        <td><a href="/blog/post1" hx-swap="transition:true">20 JUN 2025</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>
+                P: Personal
+                <br>
+                T: Technical
+            </h2>
         </div>
 
     {{ template "footer" . }}
