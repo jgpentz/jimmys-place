@@ -15,17 +15,11 @@ description:
 
 Excited to be stepping on campus again, and starting my master's degree in Network Engineering at the University of Colorado! 🎓
 
-<figure>
-  <img
-    src="/grad-school-portrait.png"
-    alt="Portrait of me standing in front of the University of Colorado football stadium"
-    width="500"
-    heigh="auto"
-  />
-    <figcaption class="text-center">
-    Go buffs!
-  </figcaption>
-</figure>
+![self portrait at school](@/assets/images/grad-school-portrait.png "Self portrait at school")
+
+<figcaption class="text-center italic">
+    Portrait of me standing in front of the University of Colorado football stadium
+</figcaption>
 
 ## Table of contents
 
