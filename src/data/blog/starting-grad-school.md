@@ -1,5 +1,5 @@
 ---
-author: Sat Naing
+author: James Pentz
 pubDatetime: 2025-09-24T19:22:00Z
 modDatetime: 2025-09-24T19:22:00Z
 title: Officially Starting Grad School
