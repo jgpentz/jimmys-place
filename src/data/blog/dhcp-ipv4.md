@@ -63,12 +63,16 @@ In the most basic scenario, all of the messages between a client and a server wi
 
 In the following image, you can see all of the packet level details for the DORA process that are exchanged between a client and a server.
 
+<div class="hidden md:block">
+
 | Message | Src MAC | Dst MAC | Src IP | Dst IP | Src Port | Dst Port |
 | :------ | :------: | -------: | -------: | -------: | -------: | -------: |
 | Discover | :c1 | ff::ff | 0.0.0.0 | 255.255.255.255 | 68 | 67 |
 | Offer | :c0 | ff::ff | 10.0.0.1 | 255.255.255.255 | 67 | 68 |
 | Request | :c1 | ff::ff | 0.0.0.0 | 255.255.255.255 | 68 | 67 |
 | Ack | :c0 | ff::ff | 10.0.0.1 | 255.255.255.255 | 67 | 68 |
+
+</div>
 
 ![wireshark bcast exchange](@/assets/images/dhcp-bcast-exchange.png "Wireshark capture of a DHCP broadcast")
 
@@ -78,12 +82,16 @@ As mentioned earlier, a DHCP client can request that the DHCP server send it’s
 
 The server messages are unicast back to the client when the client sends a discover message that has the broadcast bit in the Bootp flags set to zero.
 
+<div class="hidden md:block">
+
 | Message | Src MAC | Dst MAC | Src IP | Dst IP | Src Port | Dst Port |
 | :------ | :------: | -------: | -------: | -------: | -------: | -------: |
 | Discover | :c1 | ff::ff | 0.0.0.0 | 255.255.255.255 | 68 | 67 |
 | Offer | :c0 | :c1 | 10.0.0.1 | 10.0.0.11 | 67 | 68 |
 | Request | :c1 | ff::ff | 0.0.0.0 | 255.255.255.255 | 68 | 67 |
 | Ack | :c0 | :c1 | 10.0.0.1 | 10.0.011 | 67 | 68 |
+
+</div>
 
 ![wireshark unicast exchange](@/assets/images/dhcp-unicast-exchange.png "Wireshark capture of a DHCP unicast")
 
