@@ -24,7 +24,7 @@ Ubuntu VM in Proxmox.
 ## Version Info
 
 - **Proxmox:** 9.1.4
-- **GNS3 Server:** 2.we2.55
+- **GNS3 Server:** 2.2.55
 
 This guide walks through setting up a **GNS3 Server** inside an **Ubuntu Server VM** running on **Proxmox**. This approach keeps GNS3 isolated, enables better performance with nested virtualization, and works well for home labs and remote access setups.
 
