@@ -4,7 +4,7 @@ pubDatetime: 2026-2-6T11:30:00Z
 modDatetime: 2026-1-6T11:30:00Z
 title: ESXI Installation Guide (Plus OPNSense)
 slug: esxi-installation
-featured: true
+featured: false
 draft: false
 tags:
   - esxi
